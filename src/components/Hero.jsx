@@ -25,7 +25,7 @@ const Hero = () => {
 
     return (
         <div className="relative px-2 pb-2">
-            <div className="relative w-full md:h-[85vh] h-[45vh] rounded-2xl overflow-hidden shadow-2xl">
+            <div className="relative w-full md:h-[85vh] h-[65vh] rounded-2xl overflow-hidden shadow-2xl">
 
                 <img
                     src={Grainbg}

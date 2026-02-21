@@ -28,7 +28,7 @@ const FeaturedAlbum = () => {
                 />
             </div>
 
-            <div className="relative w-full px-4 text-center md:bottom-2 bottom-14 mt-0 md:mt-6">
+            <div className="relative w-full px-4 text-center md:bottom-2 bottom-10 mt-0 md:mt-6">
                 <h3 className="text-3xl md:text-5xl font-bold tracking-tight drop-shadow-xl pb-2">
                     False Memory by Artifact
                 </h3>
