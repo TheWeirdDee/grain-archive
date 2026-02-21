@@ -4,7 +4,6 @@ import { Link, useLocation } from 'react-router-dom';
 const Navbar = () => {
     const location = useLocation();
 
-    // Define the nav items with independent colors
     const navItems = [
         { to: '/', label: 'Home', color: 'bg-orange-500', hover: 'hover:bg-orange-600', rounded: false },
         { to: '/archive', label: 'Archive', color: 'bg-green-400', hover: 'hover:bg-green-500', rounded: true },
@@ -34,12 +33,13 @@ const Navbar = () => {
 const NavPill = ({ to, label, active, color, hover, rounded }) => (
     <Link
         to={to}
-        className={`px-4 py-3 text-lg mt-4 z-90 font-bold uppercase tracking-wider transition-all duration-300
-      ${active ? color + ' text-black' : color + ' text-white ' + hover}
-      ${rounded ? 'rounded-full' : ''}`}
+        className={`md:px-4 px-2 md:py-3 py-1 md:text-lg text-[14px] mt-4 font-bold uppercase tracking-wider transition-all duration-300
+        ${active ? color + ' text-black' : color + ' text-white ' + hover}
+        ${rounded ? 'rounded-full' : 'rounded-md'}`}
     >
         {label}
     </Link>
 );
+
 
 export default Navbar;

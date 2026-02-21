@@ -3,23 +3,19 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <footer className="w-full bg-[#0a0a0a] text-white pt-16 pb-8 px-6 md:px-1 font-sans relative">
-            {/* Grain Overlay */}
+        <footer className="w-full bg-[#0a0a0a] text-white md:pt-16 pt-4 pb-8 px-6 md:px-1 font-sans relative">
             <div className="absolute inset-0 opacity-10 pointer-events-none grain-bg"></div>
 
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 relative z-10">
 
-                {/* Brand Section */}
                 <div className="md:col-span-8 flex flex-col">
-                    <h1 className="text-7xl md:text-9xl font-bold tracking-tighter leading-none mb-4">
+                    <h1 className="text-7xl md:text-9xl font-bold tracking-tighter leading-none mb-2">
                         Grain<br />Archive
                     </h1>
                 </div>
 
-                {/* Navigation Columns */}
                 <div className="md:col-span-4 grid grid-cols-2 gap-8">
 
-                    {/* Links */}
                     <div className="flex flex-col space-y-4">
                         <div className="text-[10px] tracking-[0.2em] font-bold uppercase border border-white/20 rounded-full px-3 py-1 w-fit mb-2">
                             Links
@@ -32,7 +28,6 @@ const Footer = () => {
                         </nav>
                     </div>
 
-                    {/* Connect */}
                     <div className="flex flex-col space-y-4">
                         <div className="text-[10px] tracking-[0.2em] font-bold uppercase border border-white/20 rounded-full px-3 py-1 w-fit mb-2">
                             Connect
@@ -48,8 +43,7 @@ const Footer = () => {
                 </div>
             </div>
 
-            {/* Bottom Credits */}
-            <div className="max-w-7xl mx-auto mt-20 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-end gap-4 text-xs md:text-sm text-gray-400">
+            <div className="max-w-7xl mx-auto mt-10 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-end gap-4 text-xs md:text-sm text-gray-400">
                 <div className="flex flex-col items-end w-full">
                     <p>©2025 Grain Archive</p>
                     <p className="tracking-wide">Words, images, and signals from the edge</p>

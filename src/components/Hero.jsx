@@ -24,17 +24,15 @@ const Hero = () => {
     }, []);
 
     return (
-        <div className="relative px-4 pb-4">
-            <div className="relative w-full h-[85vh] rounded-2xl overflow-hidden shadow-2xl">
+        <div className="relative px-2 pb-2">
+            <div className="relative w-full md:h-[85vh] h-[45vh] rounded-2xl overflow-hidden shadow-2xl">
 
-                {/* Grain Background (Back Layer) */}
                 <img
                     src={Grainbg}
                     alt="Grain background"
                     className="absolute inset-0 w-full h-full object-cover"
                 />
 
-                {/* Video (Slightly Transparent so grain shows through) */}
                 <video
                     className="absolute inset-0 w-full h-full object-cover opacity-90"
                     autoPlay
@@ -45,17 +43,16 @@ const Hero = () => {
                     <source src={GrainVideo} type="video/mp4" />
                 </video>
 
-                {/* Subtle contrast overlay */}
+
                 <div className="absolute inset-0 bg-black/20"></div>
 
-                {/* Navbar */}
                 <div className="relative z-20">
                     <Navbar />
                 </div>
 
 
-                <div ref={titleRef} className="absolute inset-0 flex items-end justify-start z-20 px-12 pb-12 pointer-events-none">
-                    <h1 className="text-[12vw] leading-none font-bold tracking-tighter text-white overflow-hidden flex flex-wrap">
+                <div ref={titleRef} className="absolute inset-0 flex items-end justify-start z-20 px-2 pb-12 pointer-events-none">
+                    <h1 className="text-[14vw] leading-none font-bold tracking-tighter text-white overflow-hidden flex flex-wrap">
                         {title.split("").map((char, index) => (
                             <span key={index} className="hero-char inline-block whitespace-pre">
                                 {char}

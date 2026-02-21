@@ -44,7 +44,6 @@ const Gallery = () => {
                 const img = item.querySelector('img');
                 const textContainer = item.querySelector('.text-overlay');
 
-                // Hover effects
                 item.addEventListener('mouseenter', () => {
                     gsap.to(img, { scale: 1.1, filter: 'blur(5px)', duration: 0.5, ease: 'power2.out' });
                     gsap.to(textContainer, { y: -10, opacity: 1, duration: 0.5, ease: 'power2.out' });
@@ -55,7 +54,6 @@ const Gallery = () => {
                     gsap.to(textContainer, { y: 0, opacity: 0.9, duration: 0.5, ease: 'power2.out' });
                 });
 
-                // Scroll-trigger fade-in for text
                 gsap.from(textContainer, {
                     scrollTrigger: {
                         trigger: item,
@@ -76,7 +74,7 @@ const Gallery = () => {
 
     return (
         <div className="relative z-10 bg-[#111]">
-            {/* Gallery Grid */}
+
             <div ref={galleryRef} className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
                 {images.map((img, index) => (
                     <div key={index} className="gallery-item relative overflow-hidden group cursor-pointer h-[75vh] w-full rounded-xl">
@@ -100,17 +98,7 @@ const Gallery = () => {
                     style={{ backgroundImage: `url(${WhiteGrain})` }}
                 ></div>
 
-                {/* Orange Background - Fades in on hover (or sits behind if we just fade image) 
-                    Actually, if we want it to "transform", sticking the orange behind the image 
-                    and fading the image out is a good way to "reveal" the color, 
-                    OR fading the orange ON TOP of the image. 
-                    Let's put Orange BEHIND, and fade Image opacity to 0. 
-                */}
                 <div className="absolute inset-0 bg-orange-500 -z-10"></div>
-
-                {/* But wait, if orange is -z-10, and image is z-0 (default), then fading image to 0 reveals orange. 
-                    Correct.
-                */}
 
                 <Link to="/archive" className="relative z-10">
                     <button className="text-4xl font-serif italic border-b-2 border-black pb-1 px-6 py-2 text-black">
