@@ -1,46 +1,18 @@
 import React, { useRef, useEffect } from 'react';
-import { Link } from 'react-router-dom'; // Import Link
-import DriftFilm from "../assets/Images/HomeImages/DriftFilm.png";
-import FuzzWorship from "../assets/Images/HomeImages/FuzzWorship.png";
-import SoftThings from "../assets/Images/HomeImages/SoftThings.png";
-import VisualCulture from "../assets/Images/HomeImages/VisualCulture.png";
-import WhiteGrain from '../assets/Images/WhiteGrain.avif';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { Link } from 'react-router-dom';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const images = [
-    {
-        src: DriftFilm,
-        title: "Listening to Films That Drift",
-        category: "Film · August 21, 2028"
-    },
-    {
-        src: FuzzWorship,
-        title: "Drowning in Delay: The Revival of Fuzz Worship",
-        category: "Music · August 6, 2028"
-    },
-    {
-        src: SoftThings,
-        title: "Color, Repetition, and the Sound of Soft Things",
-        category: "Film · July 11, 2028"
-    },
-    {
-        src: VisualCulture,
-        title: "Mirrors, Image Loops, and Feedback Logic of Visual Culture",
-        category: "Visual · June 24, 2028"
-    }
-];
-
-const Gallery = () => {
+const Gallery = ({ items }) => {
     const galleryRef = useRef(null);
 
     useEffect(() => {
         const ctx = gsap.context(() => {
-            const items = gsap.utils.toArray('.gallery-item');
+            const elements = gsap.utils.toArray('.gallery-item');
 
-            items.forEach((item) => {
+            elements.forEach((item) => {
                 const img = item.querySelector('img');
                 const textContainer = item.querySelector('.text-overlay');
 
@@ -70,42 +42,27 @@ const Gallery = () => {
         }, galleryRef);
 
         return () => ctx.revert();
-    }, []);
+    }, [items]);
 
     return (
-        <div className="relative z-10 bg-[#111]">
-
-            <div ref={galleryRef} className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
-                {images.map((img, index) => (
-                    <div key={index} className="gallery-item relative overflow-hidden group cursor-pointer h-[75vh] w-full rounded-xl">
-                        <img
-                            src={img.src}
-                            alt={img.title}
-                            className="w-full h-full object-cover transition-transform will-change-transform"
-                        />
-                        <div className="text-overlay absolute bottom-4 left-4 right-4 p-4 bg-black/50 backdrop-blur-md rounded-lg opacity-90 transition-all duration-500">
-                            <h3 className="text-white text-lg font-bold drop-shadow-md">{img.title}</h3>
-                            <p className="text-gray-200 text-sm drop-shadow-md">{img.category}</p>
-                        </div>
+        <div ref={galleryRef} className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6 bg-[#111]">
+            {items.map((item, index) => (
+                <Link
+                    key={item.id || index}
+                    to={`/article/${item.id}`}
+                    className="gallery-item relative overflow-hidden group cursor-pointer h-[75vh] w-full rounded-xl block"
+                >
+                    <img
+                        src={item.src}
+                        alt={item.title}
+                        className="w-full h-full object-cover transition-transform will-change-transform"
+                    />
+                    <div className="text-overlay absolute bottom-4 left-4 right-4 p-4 bg-black/50 backdrop-blur-md rounded-lg opacity-90 transition-all duration-500">
+                        <h3 className="text-white text-lg font-bold drop-shadow-md">{item.title}</h3>
+                        <p className="text-gray-200 text-sm drop-shadow-md">{item.category}</p>
                     </div>
-                ))}
-            </div>
-
-            <div className="w-full flex justify-center items-center py-12 relative group overflow-hidden">
-
-                <div
-                    className="absolute inset-0 bg-cover bg-center transition-opacity duration-500 ease-in-out group-hover:opacity-0"
-                    style={{ backgroundImage: `url(${WhiteGrain})` }}
-                ></div>
-
-                <div className="absolute inset-0 bg-orange-500 -z-10"></div>
-
-                <Link to="/archive" className="relative z-10">
-                    <button className="text-4xl font-serif italic border-b-2 border-black pb-1 px-6 py-2 text-black">
-                        View all
-                    </button>
                 </Link>
-            </div>
+            ))}
         </div>
     );
 };

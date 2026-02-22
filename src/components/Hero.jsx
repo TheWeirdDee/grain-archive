@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import Navbar from './Navbar';
 import GrainVideo from '../assets/Grain.mp4';
 import Grainbg from '../assets/Images/Grainbg.jpg';
 import { gsap } from 'gsap';
@@ -45,10 +44,6 @@ const Hero = () => {
 
 
                 <div className="absolute inset-0 bg-black/20"></div>
-
-                <div className="relative z-20">
-                    <Navbar />
-                </div>
 
 
                 <div ref={titleRef} className="absolute inset-0 flex items-end justify-start z-20 px-2 pb-12 pointer-events-none">

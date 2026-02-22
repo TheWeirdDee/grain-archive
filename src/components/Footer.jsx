@@ -9,12 +9,12 @@ const Footer = () => {
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 relative z-10">
 
                 <div className="md:col-span-8 flex flex-col">
-                    <h1 className="text-7xl md:text-9xl font-bold tracking-tighter leading-none mb-2">
+                    <h1 className="text-9xl md:text-[15vw] font-bold tracking-tighter leading-none mb-2">
                         Grain<br />Archive
                     </h1>
                 </div>
 
-                <div className="md:col-span-4 grid grid-cols-2 gap-8">
+                <div className="md:col-span-4 grid grid-cols-2 gap-8 mt-20">
 
                     <div className="flex flex-col space-y-4">
                         <div className="text-[10px] tracking-[0.2em] font-bold uppercase border border-white/20 rounded-full px-3 py-1 w-fit mb-2">

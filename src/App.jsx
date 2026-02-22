@@ -5,15 +5,17 @@ import Archive from './pages/Archive';
 import About from './pages/About';
 import Article from './pages/Article';
 import Footer from './components/Footer';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
     <>
+      <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/archive" element={<Archive />} />
         <Route path="/about" element={<About />} />
-        <Route path="/article" element={<Article />} />
+        <Route path="/article/:id" element={<Article />} />
         <Route path="*" element={<Home />} />
       </Routes>
       <Footer />
