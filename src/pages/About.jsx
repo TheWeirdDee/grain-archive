@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import Subscribe from '../components/Subscribe';
 
-// About Images
 import Cassette from '../assets/Images/About/Casette.png';
 import FloppyDisk from '../assets/Images/About/Floppydisk.png';
 import Paperscrap from '../assets/Images/About/Paperscrap.png';
@@ -48,15 +47,17 @@ const About = () => {
     return (
         <div className="bg-[#111] min-h-screen text-white font-sans selection:bg-orange-500 overflow-x-hidden">
 
-            <header className="pt-40 pb-20 px-8 text-center">
-                <h1
-                    ref={titleRef}
-                    className="text-[15vw] md:text-[12rem] font-bold leading-none tracking-tighter uppercase flex justify-center overflow-hidden"
-                >
-                    {"About".split("").map((char, i) => (
-                        <span key={i} className="about-char inline-block">{char}</span>
-                    ))}
-                </h1>
+            <header className="pt-6 pb-2 px-8 text-center">
+                <div className="relative overflow-hidden flex justify-center">
+                    <h1
+                        ref={titleRef}
+                        className="text-[15vw] md:text-[12rem] font-bold leading-none tracking-tighter uppercase flex py-12"
+                    >
+                        {"About".split("").map((char, i) => (
+                            <span key={i} className="about-char inline-block whitespace-pre">{char}</span>
+                        ))}
+                    </h1>
+                </div>
             </header>
 
             <div className="py-20 overflow-hidden">
@@ -75,7 +76,6 @@ const About = () => {
                 </div>
             </div>
 
-            {/* Backstory Section */}
             <section className="max-w-7xl mx-auto px-8 py-32 grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-12">
                 <div className="md:col-span-4">
                     <h2 className="text-xl font-medium text-white/40 uppercase tracking-widest md:ml-20 ml-0">
@@ -83,7 +83,7 @@ const About = () => {
                     </h2>
                 </div>
                 <div className="md:col-span-8">
-                    <p className="text-xl leading-tight font-medium">
+                    <p className="text-xl md:text-2xl leading-tight font-medium">
                         Grain Archive is a running record of the fuzz, fragments, and found moments in music, film, and visual culture. From washed-out shoegaze to sun-faded celluloid, we document the tones that don't always get clean airtime. Not everything needs to be polished to mean something. Independently built by me, <span className="text-orange-500">Divine Dilibe</span>, and updated at the mercy of mood, memory, and whatever's looping at 3am, no seriously:).
                     </p>
                 </div>

@@ -26,16 +26,18 @@ const ArchiveHero = () => {
                 className="absolute inset-0 w-full h-full object-cover"
             />
 
-            <div className="absolute inset-0 bg-black/20"></div>
+            <div className="absolute inset-0 bg-black/50"></div>
 
-            <h1
-                ref={titleRef}
-                className="relative z-10 text-[15vw] md:text-[180px] font-bold tracking-tighter leading-none text-white uppercase select-none flex justify-center overflow-hidden"
-            >
-                {"Archive".split("").map((char, i) => (
-                    <span key={i} className="archive-char inline-block">{char}</span>
-                ))}
-            </h1>
+            <div className="relative z-10 flex justify-center overflow-hidden">
+                <h1
+                    ref={titleRef}
+                    className="text-[15vw] md:text-[180px] font-bold tracking-tighter leading-none text-white uppercase select-none flex py-12"
+                >
+                    {"Archive".split("").map((char, i) => (
+                        <span key={i} className="archive-char inline-block whitespace-pre">{char}</span>
+                    ))}
+                </h1>
+            </div>
         </div>
     );
 };

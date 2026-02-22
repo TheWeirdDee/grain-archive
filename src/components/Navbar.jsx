@@ -15,7 +15,7 @@ const Navbar = () => {
     return (
         <>
 
-            <div className="fixed top-4 md:top-8 left-4 md:left-8 z-[1000] pointer-events-auto">
+            <div className="fixed top-10 md:top-10 left-4 md:left-8 z-[1000] pointer-events-auto">
                 <Link to="/" className="flex-shrink-0">
                     <img
                         src={Logo}
@@ -26,7 +26,7 @@ const Navbar = () => {
             </div>
 
 
-            <nav className="fixed top-4 md:top-8 left-1/2 transform -translate-x-1/2 z-[999] w-full max-w-fit px-2 md:px-4 pointer-events-auto">
+            <nav className="fixed top-10 left-50 transform -translate-x-1/2 z-[999] w-full max-w-fit px-4 md:px-4 pointer-events-auto">
                 <div className="flex flex-wrap items-center justify-center gap-1 p-1">
                     {navItems.map((item) => (
                         <NavPill

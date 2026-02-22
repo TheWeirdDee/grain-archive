@@ -9,7 +9,7 @@ const Footer = () => {
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 relative z-10">
 
                 <div className="md:col-span-8 flex flex-col">
-                    <h1 className="text-9xl md:text-[15vw] font-bold tracking-tighter leading-none mb-2">
+                    <h1 className="text-8xl md:text-[15vw] font-bold tracking-tighter leading-none mb-2">
                         Grain<br />Archive
                     </h1>
                 </div>
