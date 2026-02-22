@@ -26,7 +26,7 @@ const Navbar = () => {
             </div>
 
 
-            <nav className="fixed top-10 md:left-1/2 left-68 transform -translate-x-1/2 z-[999] w-full max-w-fit px-3 md:px-4 pointer-events-auto">
+            <nav className="fixed top-10 md:left-1/2 left-60 transform -translate-x-1/2 z-[999] w-full max-w-fit px-3 md:px-4 pointer-events-auto">
                 <div className="flex items-center justify-center gap-1 p-1">
                     {navItems.map((item) => (
                         <NavPill
