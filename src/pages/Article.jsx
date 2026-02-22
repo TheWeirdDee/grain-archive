@@ -23,7 +23,7 @@ const Article = () => {
         );
     }
 
-    // Get 3 random related stories (excluding current)
+
     const moreStories = articles
         .filter(a => a.id !== article.id)
         .sort(() => 0.5 - Math.random())
@@ -40,7 +40,6 @@ const Article = () => {
                     {article.category} · {article.date}
                 </p>
 
-                {/* Featured Image */}
                 <div className="w-full aspect-[21/9] rounded-2xl overflow-hidden shadow-2xl relative">
                     <img
                         src={article.src}
@@ -51,15 +50,13 @@ const Article = () => {
                 </div>
             </div>
 
-            {/* Content Section - Light Background */}
             <div className="bg-[#f2f2f2] text-[#1a1a1a] py-24 px-4 md:px-8">
                 <div className="max-w-3xl mx-auto">
-                    {/* Intro / Excerpt */}
+
                     <p className="text-xl md:text-2xl font-medium leading-relaxed mb-12 border-l-4 border-orange-500 pl-8">
                         {article.excerpt}
                     </p>
 
-                    {/* Main Content */}
                     <div
                         className="prose prose-xl prose-orange max-w-none 
                         [&>h3]:text-3xl [&>h3]:font-bold [&>h3]:mt-12 [&>h3]:mb-6 
@@ -67,7 +64,6 @@ const Article = () => {
                         dangerouslySetInnerHTML={{ __html: article.content }}
                     />
 
-                    {/* Social/Footer divider */}
                     <div className="mt-24 pt-12 border-t border-black/10 flex justify-center gap-8 opacity-40">
                         <span className="hover:opacity-100 cursor-pointer transition-opacity">Instagram</span>
                         <span className="hover:opacity-100 cursor-pointer transition-opacity">Twitter</span>
@@ -76,7 +72,6 @@ const Article = () => {
                 </div>
             </div>
 
-            {/* More Stories Section */}
             <div className="bg-[#111] py-24 px-4 md:px-8 border-t border-white/10">
                 <div className="max-w-7xl mx-auto">
                     <h2 className="text-3xl font-bold mb-12 uppercase tracking-tighter">More Stories</h2>

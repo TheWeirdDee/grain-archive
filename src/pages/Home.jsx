@@ -15,17 +15,15 @@ const Home = () => {
     return (
         <div className="relative min-h-screen text-white font-sans pb-12">
 
-            {/* Grain Background at the back */}
             <img
                 src={Grainbg}
                 alt="Grain background"
                 className="absolute inset-0 w-full h-full object-cover -z-20"
             />
 
-            {/* Dark overlay */}
+
             <div className="absolute inset-0 bg-black/50 -z-10"></div>
 
-            {/* Page Content */}
             <div className="relative z-20 bg-transparent">
 
                 <Marquee />
@@ -34,7 +32,6 @@ const Home = () => {
 
                 <Gallery items={homeImages} />
 
-                {/* View All Button Section */}
                 <div className="w-full flex justify-center items-center py-12 relative group overflow-hidden">
                     <div
                         className="absolute inset-0 bg-cover bg-center transition-opacity duration-500 ease-in-out group-hover:opacity-0"

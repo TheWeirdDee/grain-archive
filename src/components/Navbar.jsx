@@ -15,7 +15,7 @@ const Navbar = () => {
     return (
         <>
 
-            <div className="fixed top-10 md:top-10 left-4 md:left-8 z-[1000] pointer-events-auto">
+            <div className="fixed top-10 left-4 md:left-8 z-[1000] pointer-events-auto">
                 <Link to="/" className="flex-shrink-0">
                     <img
                         src={Logo}
@@ -26,8 +26,8 @@ const Navbar = () => {
             </div>
 
 
-            <nav className="fixed top-10 left-50 transform -translate-x-1/2 z-[999] w-full max-w-fit px-4 md:px-4 pointer-events-auto">
-                <div className="flex flex-wrap items-center justify-center gap-1 p-1">
+            <nav className="fixed top-10 md:left-1/2 left-68 transform -translate-x-1/2 z-[999] w-full max-w-fit px-3 md:px-4 pointer-events-auto">
+                <div className="flex items-center justify-center gap-1 p-1">
                     {navItems.map((item) => (
                         <NavPill
                             key={item.to}
@@ -48,7 +48,7 @@ const Navbar = () => {
 const NavPill = ({ to, label, active, color, hover, rounded }) => (
     <Link
         to={to}
-        className={`md:px-4 px-2 md:py-3 py-1 md:text-lg text-[12px] md:text-[14px] font-bold uppercase tracking-wider transition-all duration-300 pointer-events-auto
+        className={`md:px-4 px-4 md:py-3 py-2 md:text-lg text-[15px] md:text-[14px] font-bold uppercase tracking-wider transition-all duration-300 pointer-events-auto
         ${active ? color + ' text-black shadow-lg scale-105' : color + ' text-white ' + hover}
         ${rounded ? 'rounded-full' : 'rounded-md'}`}
     >

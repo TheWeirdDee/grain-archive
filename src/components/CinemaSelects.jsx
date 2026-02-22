@@ -82,7 +82,7 @@ const CinemaSelects = () => {
                 ></div>
 
                 <div className="relative z-10 max-w-7xl mx-auto">
-                    <h2 ref={titleRef} className="text-6xl md:text-9xl font-bold tracking-tighter md:mb-16 mb-6 mt-8 uppercase leading-none overflow-hidden">
+                    <h2 ref={titleRef} className="text-5xl md:text-9xl font-bold tracking-tighter md:mb-16 mb-6 mt-8 uppercase leading-none overflow-hidden">
                         {title.split("").map((char, index) => (
                             <span key={index} className="cinema-char inline-block whitespace-pre">
                                 {char}

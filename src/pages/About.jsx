@@ -34,24 +34,29 @@ const About = () => {
         });
 
         const chars = titleRef.current.querySelectorAll('.about-char');
-        gsap.from(chars, {
-            y: 100,
-            opacity: 0,
-            duration: 1,
-            stagger: 0.1,
-            ease: "power4.out",
-            delay: 0.2
-        });
+        gsap.fromTo(
+            chars,
+            { y: 100, opacity: 0 },
+            {
+                y: 0,
+                opacity: 1,
+                duration: 1,
+                stagger: 0.1,
+                ease: "power4.out",
+                delay: 0.2,
+                clearProps: "opacity"
+            }
+        );
     }, []);
 
     return (
-        <div className="bg-[#111] min-h-screen text-white font-sans selection:bg-orange-500 overflow-x-hidden">
+        <div className="bg-[#111] text-white font-sans selection:bg-orange-500 overflow-x-hidden">
 
-            <header className="pt-6 pb-2 px-8 text-center">
-                <div className="relative overflow-hidden flex justify-center">
+            <header className="pt-18 px-8 text-center">
+                <div className="relative flex justify-center">
                     <h1
                         ref={titleRef}
-                        className="text-[15vw] md:text-[12rem] font-bold leading-none tracking-tighter uppercase flex py-12"
+                        className="text-[15vw] md:text-[11rem] font-bold leading-none tracking-tighter uppercase flex py-20 text-white drop-shadow-[0_0_1px_white]"
                     >
                         {"About".split("").map((char, i) => (
                             <span key={i} className="about-char inline-block whitespace-pre">{char}</span>
@@ -63,7 +68,7 @@ const About = () => {
             <div className="py-20 overflow-hidden">
                 <div
                     ref={marqueeRef}
-                    className="flex items-center gap-12 md:gap-24 whitespace-nowrap"
+                    className="flex items-center gap-12 md:gap-20 whitespace-nowrap"
                 >
                     {[...marqueeImages, ...marqueeImages].map((img, index) => (
                         <img
@@ -76,14 +81,14 @@ const About = () => {
                 </div>
             </div>
 
-            <section className="max-w-7xl mx-auto px-8 py-32 grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-12">
+            <section className="max-w-7xl mx-auto px-8 md:py-20 py-2 md:mb-0 mb-6 grid grid-cols-1 md:grid-cols-12 gap-2 md:gap-12">
                 <div className="md:col-span-4">
                     <h2 className="text-xl font-medium text-white/40 uppercase tracking-widest md:ml-20 ml-0">
                         Why this exists
                     </h2>
                 </div>
                 <div className="md:col-span-8">
-                    <p className="text-xl md:text-2xl leading-tight font-medium">
+                    <p className="text-lg md:text-xl leading-relaxed font-medium">
                         Grain Archive is a running record of the fuzz, fragments, and found moments in music, film, and visual culture. From washed-out shoegaze to sun-faded celluloid, we document the tones that don't always get clean airtime. Not everything needs to be polished to mean something. Independently built by me, <span className="text-orange-500">Divine Dilibe</span>, and updated at the mercy of mood, memory, and whatever's looping at 3am, no seriously:).
                     </p>
                 </div>
@@ -118,7 +123,7 @@ const About = () => {
                             </a>
                         </div>
 
-                        <div className="pt-12 flex gap-8 text-white/40 uppercase text-sm tracking-widest font-bold">
+                        <div className="pt-1 flex gap-8 text-white/40 uppercase text-sm tracking-widest font-bold">
                             <a href="#" className="hover:text-white transition-colors">Instagram</a>
                             <a href="#" className="hover:text-white transition-colors">Twitter</a>
                             <a href="#" className="hover:text-white transition-colors">RSS</a>
